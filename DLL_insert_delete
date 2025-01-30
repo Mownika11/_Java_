@@ -1,0 +1,95 @@
+class Node{
+    int data;
+    Node next;
+    Node prev;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+        this.prev=null;
+    }
+}
+class DLL{
+    Node head,tail;
+    //INSERT AT BEGINNING
+    public void insert(int data){
+    
+    Node newNode=new Node(data);
+    if(head==null){
+        head=newNode;
+        tail=newNode;
+    }
+    else{
+        newNode.next=head;
+        head.prev=newNode;
+        head=newNode;
+    }
+    }
+    //INSERT AT END
+    public void insertAtend(int data){
+        Node newNode=new Node(data);
+        if(tail==null){
+            head=tail=newNode;
+        }
+        else{
+            tail.next=newNode;
+            newNode.prev=tail;
+            tail=newNode;
+            
+        }
+    }
+    //DELETE AT BEGINNING
+    public void delete(){
+        //Node newNode=new Node(data);
+        if(head==null){
+            System.out.println("List is Empty");
+        }
+        if(head==tail){
+            head=null;
+            tail=null;
+        }
+        if(head!=null){
+            head=head.next;
+            head.prev=null;
+        }
+    }
+    //DELETE AT END
+    public void deleteAtend(){
+        //Node newNode=new Node(data);
+        if(head==tail){
+            head=null;
+            tail=null;
+        }
+        else{
+            tail=tail.prev;
+            tail.next=null;
+        }
+    }
+    public void display(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data);
+        
+        if(temp.next!=null){
+            System.out.print("->");
+        }
+            temp=temp.next;
+        }
+        System.out.println();
+}
+    
+}
+public class Main{
+    public static void main(String[]args){
+        DLL a=new DLL();
+        a.insert(100);
+        a.insert(200);
+        a.insert(300);
+        a.insertAtend(400);
+        a.delete();
+        a.deleteAtend();
+        a.display();
+       
+    }
+}
+
+
