@@ -1,0 +1,52 @@
+class Queue{
+    int a[]=new int[5];
+    int front=-1;//indicates start of queue
+    int rear=-1;//indicates end of queue
+    int size=a.length;
+    
+    public void enqueue(int data){
+        if(rear==size-1){//if rear end size == 4, then all values inserted and stack full
+            System.out.println("Queue is full");
+        }
+            rear++;//
+            a[rear]=data;
+            if(front==-1){// if empty is found. consider front as 0. which is 100.
+               front=0;//this if can be used to dequeue, or finding peek
+            }
+    }
+    
+    public void dequeue(){
+         if(front==-1&&rear==-1){
+            System.out.println("Queue is emptty");
+        }
+        else{
+       
+            front++;
+        }
+    }
+    
+   public void peek(){
+        System.out.println("The top element is :"+a[front]);
+} 
+
+    public void display(){
+        for(int i=front;i<=rear;i++){
+            System.out.println("The elements are"+a[i]);
+        }
+    }
+}
+
+    public class Main{
+        public static void main(String[]args){
+            Queue q=new Queue();
+            q.enqueue(100);
+            q.enqueue(200);
+            q.enqueue(300);
+            q.enqueue(400);
+            q.enqueue(500);
+            q.dequeue();
+            q.peek();
+            q.display();
+        }
+    }
+
