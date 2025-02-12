@@ -1,0 +1,76 @@
+import java.util.*;
+
+abstract class BankAccount { // Hiding all details and shows only output, given abstract
+    private String AccountHolderName; // Using encapsulation with private
+    private double balance;
+
+    public BankAccount(String AccountHolderName, double balance) { // CONSTRUCTOR
+        this.AccountHolderName = AccountHolderName;
+        this.balance = balance;
+    }
+
+
+    public abstract void displayDetails(); // Abstract method for display details
+
+    // Get and Set methods for getting and updating info
+    public String getAccountHolderName() {
+        return AccountHolderName;
+    }
+
+    public void setAccountHolderName(String AccountHolderName) {
+        this.AccountHolderName = AccountHolderName;
+    }
+
+    public double getBalance() {
+        return balance; 
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance; 
+    }
+
+
+    // Polymorphism: Deposit method
+    public void deposit(int amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid amount");
+        }
+    }
+
+    // Polymorphism: Withdraw method
+    public void withdraw(int amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdraw: " + amount); 
+        } else {
+            System.out.println("Invalid amount");
+        }
+    }
+
+
+    public static class SavingAccount extends BankAccount { 
+        public SavingAccount(String AccountHolderName, double balance) {
+            super(AccountHolderName, balance);
+        }
+        public void displayDetails() {
+            System.out.println("Savings Account");
+            System.out.println("Account name: " + getAccountHolderName());
+            System.out.println("Balance: " + getBalance()); 
+        }
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount.SavingAccount savings = new BankAccount.SavingAccount("Mownika", 5000); 
+        
+        savings.displayDetails();
+        savings.deposit(2000);
+        savings.withdraw(500);
+        savings.displayDetails();
+    }
+}
