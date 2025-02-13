@@ -1,0 +1,176 @@
+CONCATENATION
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hello";
+	    String str2="World";
+		System.out.println("The print statement:"+str1+" "+str2); 
+	}
+} 
+
+
+LENGTH METHOD
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hello";
+	    int length=str1.length();
+		System.out.println("The length is: "+length); 
+	}
+}
+
+CHARAT METHOD
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hello";
+	    char ch=str1.charAt(3);
+		System.out.println("The character is: "+ch); 
+	}
+}
+
+BOOLEAN METHOD
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hello";
+	    String str2="HELLO";
+	    char ch=str1.charAt(3);
+		System.out.println("Check whether it is equal: "+str1.equalsIgnoreCase(str2)); 
+	}
+}
+
+UPPERCASE AND LOWERCASE
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hello";
+	    String str2="HELLO";
+		System.out.println("Lowercase "+str2.toLowerCase()); 
+		System.out.println("Uppercase "+str1.toUpperCase()); 
+	}
+}
+
+INDEX OF
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hello";
+		System.out.println("Index of "+str1.indexOf('e')); 
+	}
+}
+
+LAST INDEX OF
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hello";
+		System.out.println("Index of "+str1.lastIndexOf('o'));
+	}
+}
+
+STARTS WITH AND ENDS WITH(checks if the given String starts with and ends with the string given)
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hii Hello";
+		System.out.println("Starts with "+str1.startsWith("Hii"));
+		System.out.println("Ends with "+str1.endsWith("Friends"));
+	}
+}
+
+SUBSTRING(used to print a substring inside a string if index specified)
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    String str1="Hii Hello";
+		System.out.println("Sub string "+str1.substring(2,6));
+
+	}
+}
+
+SPLIT(Removes the letter)
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        String str1 = "Hii Hello";
+        System.out.println("SPLIT " + Arrays.toString(str1.split("H")));
+    }
+}
+
+TRIM(Remove unwanted space at beginning and end)
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        String str1 = " Hii Hello    ";
+        System.out.println("Trimmed string " + str1.trim());
+    }
+}
+
+VALUE OF(prints e that is if you want to print something as string)
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        String str1 = " Hii Hello    ";
+        System.out.println("Value of " + str1.valueOf('e'));
+    }
+}
+
+REPLACE
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String str1 = " Hii Hello    ";
+        System.out.println("Value of " + str1.replace('i','e'));//should use single quotes
+    }
+}
+
+REPLACE ALL
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String str1 = " Hii Hello    ";
+        System.out.println("Value of " + str1.replaceAll("i","e"));//should use double quotes
+    }
+}
+
+REPLACE FIRST(only the first letter is replaced)
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String str1 = " Hii Hello    ";
+        System.out.println("Value of " + str1.replaceFirst("i","e"));
+    }
+}
+
+IS EMPTY(returns true if string is empty else false)
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String str1 ="" ;
+        System.out.println("Value of " + str1.isEmpty());
+    }
+}
+TO CHAR ARRAY(Converts a string to array of characters)
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        String str1 = "Hii Hello";
+        char[] charArray = str1.toCharArray();
+        System.out.println(Arrays.toString(charArray));
+    }
+}
